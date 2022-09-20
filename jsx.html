@@ -8,6 +8,7 @@
   <title>Document</title>
   <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
   <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 </head>
 
 <body>
@@ -16,13 +17,37 @@
 
   <div id="root"></div>
 
-  <script>
+  <script type="text/babel">
 
-    const ul = React.createElement('ul', null, React.createElement('li', null, 'JS'), React.createElement('li', null, 'CSS')
-    );
+    // const ul = React.createElement('ul', null, React.createElement('li', null, 'JS'), React.createElement('li', null, 'CSS')
+    // );
+
+    // ReactDOM.render(ul, document.getElementById('root'));
+
+    const content = 'CSS';
+    const courses = [
+      {
+        name: 'HTML, CSS'
+      },
+      {
+        name: 'Responsive web'
+      },
+      {
+        name: 'Reactjs'
+      },
+    ];
+
+
+    const ul = (
+      <React.Fragment>
+        <ul>
+          {courses.map((item, idx) => <li key={idx} >{item.name}</li>)}
+        </ul>;
+        <p>Hello</p>
+      </React.Fragment>
+    )
 
     ReactDOM.render(ul, document.getElementById('root'));
-
   </script>
 </body>
 
