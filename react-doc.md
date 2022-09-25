@@ -11,3 +11,7 @@
 
 - sẽ có các types : string, funciton/class
 -
+
+
+# Tìm hiểu kỹ props.
+props mà ko gán giá trị thì mặc định sẽ là true.
