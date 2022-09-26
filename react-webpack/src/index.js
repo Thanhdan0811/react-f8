@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
 
 function App() {
   return (
@@ -9,4 +9,9 @@ function App() {
   );
 }
 
-ReactDOM.render(<App />, document.getElementById("root"));
+// React 17
+// ReactDOM.render(<App />, document.getElementById("root"));
+
+// React 18
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<App />);
