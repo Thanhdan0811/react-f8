@@ -1,57 +1,18 @@
-import { useState } from 'react';
-
-
-
-
+import { useState } from "react";
+import Content from "./Content";
 
 function App() {
-
-  
-
-  const [jobs, setJobs] = useState(() => {
-    return JSON.parse(localStorage.getItem('jobs')) ?? [];
-  });
-  const [job, setJob] = useState('');
-
-  const handleSubmit = () => {
-    if (!job) return;
-    setJobs(prev => {
-      const newJobs = [...prev, job];
-
-      const jsonJobs = JSON.stringify(newJobs);
-
-      localStorage.setItem('jobs', jsonJobs);
-
-      return newJobs;
-
-
-    });
-    setJob('');
-  }
+  const [show, setShow] = useState(false);
 
   return (
-    <div className="App" style={{padding: '20px'}}>
-      <input type="text" value={job} onChange={(e) => setJob(e.target.value)} />
-      <button onClick={handleSubmit}>Change</button>
-
-      
-
-      <ul>
-        {
-          jobs.map((job, idx) => {
-            return <li key={idx}>{job}</li>
-          })
-        }
-      </ul>
-
+    <div className="App" style={{ padding: "20px" }}>
+      <button onClick={() => setShow(!show)}>Toggle</button>
+      {show && <Content />}
     </div>
   );
 }
 
 export default App;
-
-
-
 
 // baif 1 -  React Hook useState
 /*
@@ -90,7 +51,6 @@ function App() {
 export default App;
 
 */
-
 
 // VBài 2 Tođo list useState
 /* 
