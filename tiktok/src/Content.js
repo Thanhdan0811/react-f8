@@ -1,5 +1,26 @@
-import { useEffect, useState } from "react";
+import { useRef, useEffect, useState } from "react";
 
+function Content() {
+  const [count, setCount] = useState(60);
+
+  const handleStart = () => {};
+
+  const handleStop = () => {};
+
+  return (
+    <div style={{ padding: 20 }}>
+      <h1>{count}</h1>
+      <button onClick={handleStart}>Start</button>
+      <button onClick={handleStop}>Stop</button>
+    </div>
+  );
+}
+
+export default Content;
+
+// ############## lesson
+
+/*
 const lessons = [
   {
     id: 1,
@@ -55,8 +76,8 @@ function Content() {
   );
 }
 
-export default Content;
 
+*/
 
 // ############ File upload image
 // function Content() {
@@ -72,16 +93,12 @@ export default Content;
 
 //   const handlePreviewAvarta = (e) => {
 //     const file = e.target.files[0];
-    
 
 //     file.preview = URL.createObjectURL(file);
 
 //     setAvatar(file);
 
 //   };
-
-  
-
 
 //   return (
 //     <div>
@@ -98,15 +115,11 @@ export default Content;
 // function Content() {
 //   const [countdown, setCountdown] = useState(180);
 
-
 //   useEffect(() => {
 //     setInterval(() => {
 //       setCountdown(countdown - 1);
 //     }, 1000)
 //   }, []);
-
-  
-
 
 //   return (
 //     <div>
@@ -114,7 +127,6 @@ export default Content;
 //     </div>
 //   );
 // }
-
 
 // #######################
 // const tabs = ["posts", "comments", "albums"];
