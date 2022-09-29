@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Content from "./Content";
+import UseMemo from "./UseMemo";
 
 function App() {
   const [show, setShow] = useState(false);
@@ -8,6 +9,7 @@ function App() {
     <div className="App" style={{ padding: "20px" }}>
       <button onClick={() => setShow(!show)}>Toggle</button>
       {show && <Content />}
+      <UseMemo />
     </div>
   );
 }
