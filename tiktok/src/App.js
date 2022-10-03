@@ -1,15 +1,24 @@
 import { useState } from "react";
 import Content from "./Content";
+import ContextCom from "./Context/ContextCom";
+import TodoListReducer from "./todo/TodoListReducer";
 import UseMemo from "./UseMemo";
+import UseReducerCom from "./UseReducerCom";
+import './App.css';
 
 function App() {
-  const [show, setShow] = useState(false);
+  // const [show, setShow] = useState(false);
 
   return (
     <div className="App" style={{ padding: "20px" }}>
-      <button onClick={() => setShow(!show)}>Toggle</button>
-      {show && <Content />}
-      <UseMemo />
+      {/* <button onClick={() => setShow(!show)}>Toggle</button> */}
+      {/* {show && <Content />} */}
+      {/* <UseMemo /> */}
+
+      {/* <UseReducerCom /> */}
+
+      <TodoListReducer />
+      <ContextCom />
     </div>
   );
 }
